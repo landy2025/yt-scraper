@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Probar servidor</title>
+</head>
+<body>
+  <h1>Probar /scrape</h1>
+  <button onclick="enviar()">Enviar request</button>
+
+  <script>
+    async function enviar() {
+      const response = await fetch('http://localhost:3000/scrape', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ videoId: 'dQw4w9WgXcQ' }) // Puedes cambiar por otro ID
+      });
+      const data = await response.json();
+      console.log(data);
+      alert(JSON.stringify(data, null, 2));
+    }
+  </script>
+</body>
+</html>
