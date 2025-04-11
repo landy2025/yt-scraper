@@ -130,6 +130,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/scrape', async (req, res) => {
+  console.log("Body recibido:", req.body);
   const { channel_id } = req.body;
   if (!channel_id) {
     return res.status(400).json({ error: "Falta el parámetro 'channel_id' en el body." });
