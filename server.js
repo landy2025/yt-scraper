@@ -1,4 +1,10 @@
 const express = require('express');
+const cors = require('cors'); // <--- Agregamos esto
+
+const app = express();
+app.use(cors()); // <--- Permitimos peticiones de cualquier origen
+app.use(express.json()); // <--- Si estás recibiendo JSON
+const express = require('express');
 const axios = require('axios');
 const { getSubtitles } = require('youtube-captions-scraper');
 
