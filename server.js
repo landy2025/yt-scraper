@@ -1,10 +1,5 @@
 const express = require('express');
-const cors = require('cors'); // <--- Agregamos esto
-
-const app = express();
-app.use(cors()); // <--- Permitimos peticiones de cualquier origen
-app.use(express.json()); // <--- Si estás recibiendo JSON
-const express = require('express');
+const cors = require('cors');
 const axios = require('axios');
 const { getSubtitles } = require('youtube-captions-scraper');
 
@@ -13,6 +8,7 @@ const port = process.env.PORT || 3000;
 
 const API_KEY = process.env.YT_API_KEY || 'AIzaSyAXLg3-Gpoda7YE7f9SEFCsFcjRHpx7-Fs';
 
+app.use(cors());
 app.use(express.json());
 
 async function getUploadsPlaylistId(channelId) {

@@ -12,13 +12,7 @@
   "dependencies": {
     "axios": "^1.6.0",
     "express": "^4.18.2",
-    const express = require('express');
-    const cors = require('cors'); // <--- Agregamos esto
-
-    const app = express();
-    app.use(cors()); // <--- Permitimos peticiones de cualquier origen
-    app.use(express.json()); // <--- Si estás recibiendo JSON
-
+    "cors": "^2.8.5",
     "youtube-captions-scraper": "^1.2.5"
   }
 }
